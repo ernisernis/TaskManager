@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../css/MyCSS.css">
+       
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="main" href="main.html">Tasks</a>
+            <a class="profile" href = "profile.html">Profile</a>
+            <a class="calendar2" href = "calendar.html">Calendar</a>
+            <a class="active" href = "#">+</a>
+        </div>
+
+        <div class="container">
+            <div class="table" >
+                <div class="task" > 
+
+            <div style="padding-bottom: 15px; text-align: center;">
+                <h1>Add a task</h1>
+            </div>
+    
+            <form action="main.html" id="plus_id" method="POST" name="myplus">
+                
+                
+                <br><label>Enter a task's name</label>
+                <input type="text" name="plusTask" id="plusTask"/></br>
+  
+                <br><label>Due date</label>
+                <input type="date" name="plusDate" id="plusDate" min="2021-05-12" max="2031-05-12" /> </br>
+    
+                <br><label>Task's description</label>
+                <input type="text" name="plusDesc" id="plusDesc" /></br>
+
+                <br><input type="submit" onclick="handleSubmit()" /> </br>
+    
+                <br><ul id="myList">
+                </ul></br>
+
+                <br><ul id="myTaskCount">
+                </ul></br>
+
+                <br><ul id="myExperience">
+                </ul></br>
+
+            </form>
+        </div>
+            </div>
+        </div>
+        
+
+    <script src="../scripts/plus.js"> </script>
+    </body>
+</html>

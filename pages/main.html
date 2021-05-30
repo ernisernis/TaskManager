@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../css/MyCSS.css">
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="active" href="#">Tasks</a>
+            <a class="profile" href = "profile.html">Profile</a>
+            <a class="calendar2" href = "calendar.html">Calendar</a>
+            <a class="plus" href = "plus.html">+</a>
+        </div>
+
+        <div class="container">
+            <div class="table">
+                <div class="task">
+                    <div style="padding-top: 1px;text-align: center;padding-bottom: 10px;">
+                        <h1>Task's name | Due date | Task's description</h1>
+                        <ul id="myList">
+        
+                        </ul>
+
+                    <div style="padding-top: 10px;text-align: right;padding-right: 10px;">
+                        <button id="clearButton" onclick="clearTasks()">Clear</button>
+                     </div>
+                    
+                </div>
+               
+            </div>
+           
+        </div>
+
+
+
+    <script src="../scripts/plusResult.js"> </script>
+    <script src="../scripts/plus.js"> </script>
+    </body>
+</html>
