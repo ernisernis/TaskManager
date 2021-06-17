@@ -124,7 +124,7 @@ body {
     cursor: pointer;
 }
 
-.form__link:hover {
+.form__link :hover{
     text-decoration: underline;
 }
 
