@@ -37,8 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
         //Performing AJAX/fetch login
         let username1 = document.getElementById("idUsernameOrEmail").value;
         let password1 = document.getElementById("idPassword").value;
-
-        if (username1 == "user" && password1 == "name") {
+        const usernameDb = localStorage.getItem("USERNAME");
+        const passwordDb = localStorage.getItem("PASSWORD");
+        if (username1 === usernameDb && password1 === passwordDb) {
             alert("Login successfully");
             window.location.replace("pages/main.html");
             return false;
@@ -66,10 +67,6 @@ function accountForm() {
     const email = document.getElementById("signupEmail").value;
     const signPassword = document.getElementById("signupPassword").value;
     const signPassword2 = document.getElementById("signupPassword2").value;
-
-    console.log(email);
-    console.log(signPassword);
-    console.log(signPassword2);
 
     if (signPassword === signPassword2) {
         alert("Success!");
