@@ -1,85 +1,84 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="../css/MyCSS.css">
-        <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-      />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet"
-      />
-    </head>
-    <body>
-        <div class="topnav">
-            <a class="main" href="main.html">Tasks</a>
-            <a class="active" href = "#">Profile</a>
-            <a class="calendar2" href = "calendar.html">Calendar</a>
-            <a class="plus" href = "plus.html">+</a>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/MyCSS.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="main" href="main.html">Tasks</a>
+        <a class="active" href="#">Profile</a>
+        <a class="calendar2" href="calendar.html">Calendar</a>
+        <a class="statistics" href="statistics.html">Statistics</a>
+        <a class="plus" href="plus.html">+</a>
+    </div>
+
+    <div class="container">
+        <div class="table">
+            <div class="task">
+
+                <div style="padding-bottom: 15px; text-align: center;">
+                    <h1>Profile</h1>
+                </div>
+
+
+                <div style="padding-bottom: 5px;text-align: center;">
+                    <h2> First Name: <span id="profile-name"></span></h2>
+                </div>
+                <form method="POST">
+                    <label>Enter your name: </label>
+                    <input type="text" name="profileName" id="profileName" />
+                    <input type="submit" onclick="profileNameSubmit()" />
+                </form>
+
+
+                <div style="padding-top: 25px;text-align: center;">
+                    <h2> Last Name: <span id="profile-last-name"></span></h2>
+                </div>
+                <form method="POST">
+                    <br><label>Enter your last name: </label>
+                    <input type="text" name="profileLastName" id="profileLastName" />
+                    <input type="submit" onclick="profileLastNameSubmit()" /></br>
+                </form>
+
+
+                <div style="padding-bottom: 3px;padding-top: 25px;text-align: center;">
+                    <h2> Email: <span id="profile-email"></span></h2>
+                </div>
+                <form method="POST">
+                    <label>Enter your email: </label>
+                    <input type="text" name="profileEmail" id="profileEmail" />
+                    <input type="submit" onclick="profileEmailSubmit()" />
+                </form>
+
+
+                <div style="padding-bottom: 5px;padding-top: 25px;text-align: center;">
+                    <h2> Country: <span id="profile-country"></span></h2>
+                </div>
+                <form method="POST">
+                    <label>Enter your country: </label>
+                    <input type="text" name="profileCountry" id="profileCountry" />
+                    <input type="submit" onclick="profileCountrySubmit()" />
+                </form>
+
+                <br>
+                Tasks created: <span id="tasks-count"></span>
+                </br>
+
+                <br>
+                Experience: <span id="experience"></span>
+                </br>
+
+            </div>
         </div>
+    </div>
 
-        <div class="container">
-            <div class="table" >
-                <div class="task" >
 
-            <div style="padding-bottom: 15px; text-align: center;">
-                 <h1>Profile</h1>
-              </div>
-
-            
-            <div style="padding-bottom: 5px;text-align: center;">
-                <h2> First Name: <span id="profile-name"></span></h2>
-             </div>
-            <form method="POST">
-               <label>Enter your name: </label>
-                <input type="text" name="profileName" id="profileName"/>
-                <input type="submit" onclick="profileNameSubmit()" />
-            </form>
-
-            
-            <div style="padding-top: 25px;text-align: center;">
-                <h2> Last Name: <span id="profile-last-name"></span></h2>
-             </div>
-            <form method="POST">
-                <br><label>Enter your last name: </label>
-                <input type="text" name="profileLastName" id="profileLastName"/> 
-                <input type="submit" onclick="profileLastNameSubmit()" /></br>
-            </form>
-            
-            
-            <div style="padding-bottom: 3px;padding-top: 25px;text-align: center;">
-                <h2> Email: <span id="profile-email"></span></h2>
-             </div>
-            <form method="POST">
-                <label>Enter your email: </label>
-                <input type="text" name="profileEmail" id="profileEmail"/>
-                <input type="submit" onclick="profileEmailSubmit()" />
-            </form>
-            
-            
-            <div style="padding-bottom: 5px;padding-top: 25px;text-align: center;">
-                <h2> Country: <span id="profile-country"></span></h2>
-             </div>
-            <form method="POST">
-                <label>Enter your country: </label>
-                <input type="text" name="profileCountry" id="profileCountry"/>
-                <input type="submit" onclick="profileCountrySubmit()" />
-            </form>
-
-            <br>
-            Tasks created: <span id="tasks-count"></span>
-             </br>
-            
-            <br>
-            Experience: <span id="experience"></span>
-            </br>
-    
-        </div>
-        </div>
-        </div>
-
-       
     <script src="../scripts/profile.js"> </script>
-    </body>
+</body>
+
 </html>
