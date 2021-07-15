@@ -14,7 +14,7 @@ function setInputError(inputElement, message) {
 function clearInputError(inputElement) {
     inputElement.classList.remove("form__input--error");
     inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
-} 
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
@@ -42,14 +42,13 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Login successfully");
             window.location.replace("pages/main.html");
             return false;
+        } else {
+            setFormMessage(loginForm, "error", "Invalid username/password combination");
         }
 
-        console.log(username1 + " YOOOOO" + password1);
-
-        //setFormMessage(loginForm, "error", "Invalid username/password combination");
     });
 
-    document.querySelectorAll(".form__input").forEach(inputElement =>{
+    document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
             if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 8) {
                 setInputError(inputElement, "Username must be at least 10 characters in length");
@@ -61,3 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+function accountForm() {
+    window.localStorage.setItem("TASKS", myList.innerHTML);
+    window.localStorage.setItem("TASKSCOUNT", a);
+    window.localStorage.setItem("EXPERIENCE", b);
+}
