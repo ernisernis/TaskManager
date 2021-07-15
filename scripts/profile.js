@@ -1,41 +1,36 @@
-window.addEventListener('load',() => {
+window.addEventListener('load', () => {
 
-    var pname =localStorage.getItem('PROFILE');
+    var pname = localStorage.getItem('PROFILE');
     document.getElementById('profile-name').innerHTML = pname;
 
-    var plname =localStorage.getItem('PROFILE-LAST-NAME');
+    var plname = localStorage.getItem('PROFILE-LAST-NAME');
     document.getElementById('profile-last-name').innerHTML = plname;
 
-    var pemail =localStorage.getItem('PROFILE-EMAIL');
+    var pemail = localStorage.getItem('PROFILE-EMAIL');
     document.getElementById('profile-email').innerHTML = pemail;
 
-    var pcountry =localStorage.getItem('PROFILE-COUNTRY');
+    var pcountry = localStorage.getItem('PROFILE-COUNTRY');
     document.getElementById('profile-country').innerHTML = pcountry;
 
-    var pTasksCreated = localStorage.getItem("TASKSCOUNT");
-    document.getElementById("tasks-count").innerHTML = pTasksCreated;
-
-    var pExperience = localStorage.getItem("EXPERIENCE");
-    document.getElementById("experience").innerHTML = pExperience;
 })
 
 function profileNameSubmit() {
 
     var profileName = document.getElementById('profileName').value;
-    localStorage.setItem("PROFILE",profileName);
+    localStorage.setItem("PROFILE", profileName);
 }
 
 function profileLastNameSubmit() {
     var x = document.getElementById('profileLastName').value;
-    localStorage.setItem("PROFILE-LAST-NAME",x);
+    localStorage.setItem("PROFILE-LAST-NAME", x);
 }
 
 function profileEmailSubmit() {
     var x = document.getElementById('profileEmail').value;
-    localStorage.setItem("PROFILE-EMAIL",x);
+    localStorage.setItem("PROFILE-EMAIL", x);
 }
 
 function profileCountrySubmit() {
     var x = document.getElementById('profileCountry').value;
-    localStorage.setItem("PROFILE-COUNTRY",x);
+    localStorage.setItem("PROFILE-COUNTRY", x);
 }
