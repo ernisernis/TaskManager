@@ -61,7 +61,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 function accountForm() {
-    window.localStorage.setItem("TASKS", myList.innerHTML);
-    window.localStorage.setItem("TASKSCOUNT", a);
-    window.localStorage.setItem("EXPERIENCE", b);
+
+    const username = document.getElementById("signupUsername").value;
+    const email = document.getElementById("signupEmail").value;
+    const signPassword = document.getElementById("signupPassword").value;
+    const signPassword2 = document.getElementById("signupPassword2").value;
+
+    console.log(email);
+    console.log(signPassword);
+    console.log(signPassword2);
+
+    if (signPassword === signPassword2) {
+        alert("Success!");
+        window.localStorage.setItem("USERNAME", username);
+        window.localStorage.setItem("EMAIL", email);
+        window.localStorage.setItem("PASSWORD", signPassword);
+    } else {
+        alert("Passwords do not match!");
+    }
 }
