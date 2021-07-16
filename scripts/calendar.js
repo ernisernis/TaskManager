@@ -1,8 +1,8 @@
 const calendarElements = document.querySelectorAll('[data-calendar]');
 
 const monthNames = [
-    "January", "February", "March", "April", "May", "June", "July",
-    "August", "September", "October", "November", "December"
+    'January', 'February', 'March', 'April', 'May', 'June', 'July',
+    'August', 'September', 'October', 'November', 'December'
 ];
 
 const today = new Date();
@@ -30,7 +30,7 @@ function createCalendarHeader(calendarE1) {
     const calendarHeaderTop = document.createElement('div');
     calendarHeaderTop.classList.add('calendar__header_top');
     calendarHeaderTop.innerHTML = `
-        <button class="btn prev-month><span>&larr;</span></button>
+        <button class="btn prev-month"><span>&larr;</span></button>
         <h2 class="current-month">${selected.getMonth() + 1} - ${selected.getFullYear()}</h2>
         <button class="btn next-month"><span>&rarr;</span></button>
     `;
@@ -84,7 +84,7 @@ function createCalendar(calendarE1) {
     let x = 1;
     let nextMonthStart = 1;
 
-    for (let i = 0; i < rows + 1; i++) {
+    for (let i = 1; i < rows + 1; i++) {
         const row = document.createElement('div');
         row.classList.add('row');
 
@@ -98,7 +98,7 @@ function createCalendar(calendarE1) {
             if (i === 1) {
                 if (j < startingPoint) {
                     column.classList.add('in-prev-month');
-                    column.setAttribute('data-date', `${prevStartingDay}-${selected.getMonth() === 0 ? 12 : selected.getMonth()}-${selected.getFullYear()}`);
+                    column.setAttribute('data-date', `${prevStartingDay}-${selected.getMonth() === 0 ? 12 : selected.getMonth()}-${selected.getMonth() === 0 ? selected.getFullYear() - 1 : selected.getFullYear()}`);
 
                     numberE1.innerHTML = prevStartingDay;
                     prevStartingDay++;
@@ -114,12 +114,16 @@ function createCalendar(calendarE1) {
             } else {
                 column.classList.add('in-next-month');
                 numberE1.innerHTML = nextMonthStart;
-                column.setAttribute('data-date', `${nextMonthStart}-${selected.getMonth() + 2}-${selected.getFullYear()}`);
+                column.setAttribute('data-date', `${nextMonthStart}-${selected.getMonth() + 2 === 13 ? 1 : selected.getMonth() + 2}-${selected.getMonth() + 2 === 13 ? selected.getFullYear() + 1 : selected.getFullYear()}`);
                 nextMonthStart++;
             }
 
             if (column.dataset.date === todayFormatted) {
                 column.classList.add('today');
+            }
+
+            if (column.dataset.date === "24-7-2021") {
+                column.classList.add('today2');
             }
 
             column.addEventListener('click', (e) => {
