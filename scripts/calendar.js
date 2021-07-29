@@ -1,10 +1,8 @@
 const calendarElements = document.querySelectorAll('[data-calendar]');
 
+const storedDates = JSON.parse(localStorage.getItem("TASKSARRAY"));
+const arrayCount = localStorage.getItem("COUNT");
 
-const allTasks = localStorage.getItem("TASKSCALENDAR");
-let allTaskSplit = allTasks.split("<li>", "</li>");
-//allTaskSplit2 = allTaskSplit.split("</li>");
-alert(allTaskSplit);
 
 const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June', 'July',
@@ -127,9 +125,12 @@ function createCalendar(calendarE1) {
             if (column.dataset.date === todayFormatted) {
                 column.classList.add('today');
             }
-
-            if (column.dataset.date === "24-7-2021") {
-                column.classList.add('today2');
+            if (arrayCount !== null) {
+                for (let i = 0; i < arrayCount; i++) {
+                    if (column.dataset.date === storedDates[i]) {
+                        column.classList.add('today2');
+                    }
+                }
             }
 
             column.addEventListener('click', (e) => {
