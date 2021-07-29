@@ -1,5 +1,11 @@
 const calendarElements = document.querySelectorAll('[data-calendar]');
 
+
+const allTasks = localStorage.getItem("TASKSCALENDAR");
+let allTaskSplit = allTasks.split("<li>", "</li>");
+//allTaskSplit2 = allTaskSplit.split("</li>");
+alert(allTaskSplit);
+
 const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June', 'July',
     'August', 'September', 'October', 'November', 'December'
