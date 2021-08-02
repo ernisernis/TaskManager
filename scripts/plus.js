@@ -60,6 +60,7 @@ function clearTasks() {
 
 function reformatDate(dateStr) {
     dArr = dateStr.split("-");
+
     const newdArr2 = dArr[2].replace("0", "");
     const newdArr1 = dArr[1].replace("0", "");
     return newdArr2 + "-" + newdArr1 + "-" + dArr[0];
