@@ -1,7 +1,8 @@
 const calendarElements = document.querySelectorAll('[data-calendar]');
 
 const storedDates = JSON.parse(localStorage.getItem("TASKSARRAY"));
-const arrayCount = localStorage.getItem("COUNT");
+const arrayCount = localStorage.getItem("TASKSCOUNT")
+
 
 
 const monthNames = [

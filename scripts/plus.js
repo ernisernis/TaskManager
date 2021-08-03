@@ -60,8 +60,19 @@ function clearTasks() {
 
 function reformatDate(dateStr) {
     dArr = dateStr.split("-");
-
-    const newdArr2 = dArr[2].replace("0", "");
-    const newdArr1 = dArr[1].replace("0", "");
-    return newdArr2 + "-" + newdArr1 + "-" + dArr[0];
+    if (dArr[2] === "20" || dArr[2] === "10" || dArr[2] === "30") {
+        if (dArr[1] === "10") {
+            return dArr[2] + "-" + dArr[1] + "-" + dArr[0];
+        } else {
+            const newdArr11 = dArr[1].replace("0", "");
+            return dArr[2] + "-" + newdArr11 + "-" + dArr[0];
+        }
+    } else if (dArr[1] === "10") {
+        const newdArr22 = dArr[2].replace("0", "");
+        return newdArr22 + "-" + dArr[1] + "-" + dArr[0];
+    } else {
+        const newdArr2 = dArr[2].replace("0", "");
+        const newdArr1 = dArr[1].replace("0", "");
+        return newdArr2 + "-" + newdArr1 + "-" + dArr[0];
+    }
 }
