@@ -34,3 +34,15 @@ function profileCountrySubmit() {
     var x = document.getElementById('profileCountry').value;
     localStorage.setItem("PROFILE-COUNTRY", x);
 }
+
+function submitAll() {
+    let firstName = document.getElementById("profileName").value;
+    let lastName = document.getElementById("profileLastName").value;
+    let profileEmail = document.getElementById("profileEmail").value;
+    let profileCountry = document.getElementById("profileCountry").value;
+
+    localStorage.setItem("PROFILE", firstName);
+    localStorage.setItem("PROFILE-LAST-NAME", lastName);
+    localStorage.setItem("PROFILE-EMAIL", profileEmail);
+    localStorage.setItem("PROFILE-COUNTRY", profileCountry);
+}

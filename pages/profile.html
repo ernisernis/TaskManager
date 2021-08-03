@@ -30,9 +30,7 @@
                     <h2> First Name: <span id="profile-name"></span></h2>
                 </div>
                 <form method="POST">
-                    <label>Enter your name: </label>
-                    <input type="text" name="profileName" id="profileName" />
-                    <input type="submit" onclick="profileNameSubmit()" />
+                    <input type="text" name="profileName" placeholder="Enter your first name" id="profileName" />
                 </form>
 
 
@@ -40,9 +38,7 @@
                     <h2> Last Name: <span id="profile-last-name"></span></h2>
                 </div>
                 <form method="POST">
-                    <br><label>Enter your last name: </label>
-                    <input type="text" name="profileLastName" id="profileLastName" />
-                    <input type="submit" onclick="profileLastNameSubmit()" /></br>
+                    <input type="text" placeholder="Enter your last name" name="profileLastName" id="profileLastName" />
                 </form>
 
 
@@ -50,9 +46,7 @@
                     <h2> Email: <span id="profile-email"></span></h2>
                 </div>
                 <form method="POST">
-                    <label>Enter your email: </label>
-                    <input type="text" name="profileEmail" id="profileEmail" />
-                    <input type="submit" onclick="profileEmailSubmit()" />
+                    <input type="text" name="profileEmail" id="profileEmail" placeholder="Enter your email" />
                 </form>
 
 
@@ -60,11 +54,13 @@
                     <h2> Country: <span id="profile-country"></span></h2>
                 </div>
                 <form method="POST">
-                    <label>Enter your country: </label>
-                    <input type="text" name="profileCountry" id="profileCountry" />
-                    <input type="submit" onclick="profileCountrySubmit()" />
+                    <input type="text" name="profileCountry" placeholder="Enter your country" id="profileCountry" />
                 </form>
-
+                <form>
+                    <div style="text-align: center; padding: 2rem;">
+                        <input type="submit" onclick="submitAll()" />
+                    </div>
+                </form>
             </div>
         </div>
     </div>
