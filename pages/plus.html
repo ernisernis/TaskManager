@@ -28,17 +28,21 @@
 
                 <form action="main.html" id="plus_id" method="POST" name="myplus">
 
+                    <div class="taskField">
+                        <input type="text" name="plusTask" placeholder="Enter a task's name" id="plusTask" />
+                    </div>
+                    <div class="taskField">
 
-                    <br><label>Enter a task's name</label>
-                    <input type="text" name="plusTask" id="plusTask" /></br>
+                        <br><label>Due date</label>
+                        <input type="date" name="plusDate" id="plusDate" min="2021-05-12" max="2031-05-12" /> </br>
+                    </div>
+                    <div class="taskField">
+                        <input type="text" name="plusDesc" placeholder="Task's description" id="plusDesc" />
+                    </div>
+                    <div class="taskField">
 
-                    <br><label>Due date</label>
-                    <input type="date" name="plusDate" id="plusDate" min="2021-05-12" max="2031-05-12" /> </br>
-
-                    <br><label>Task's description</label>
-                    <input type="text" name="plusDesc" id="plusDesc" /></br>
-
-                    <br><input type="submit" onclick="handleSubmit()" /> </br>
+                        <br><input type="submit" onclick="handleSubmit()" /> </br>
+                    </div>
 
                     <br>
                     <ul id="myList">
