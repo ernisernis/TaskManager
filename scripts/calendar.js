@@ -127,7 +127,7 @@ function createCalendar(calendarE1) {
                 column.classList.add('today');
             }
             if (arrayCount !== null) {
-                for (let i = 0; i < arrayCount; i++) {
+                for (let i = 0; i < storedDates.length; i++) {
                     if (column.dataset.date === storedDates[i]) {
                         column.classList.add('today2');
                     }

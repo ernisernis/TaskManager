@@ -1,4 +1,5 @@
 
+
 function handleSubmit() {
 
     var plusTask = document.getElementById('plusTask').value;
@@ -27,7 +28,7 @@ function handleSubmit() {
         b += Math.floor(Math.random() * 11);
     }
 
-    myList.innerHTML += `<li> ${plusTask} ${plusDate} ${plusDesc} <div class="DeleteTask">X</div></li>`;
+    myList.innerHTML += `<li class="subjectName"> ${plusTask} ${plusDate} ${plusDesc} <button onclick="clearATask()">Remove</button></li>`;
 
     let calendarTasks = JSON.parse(localStorage.getItem("TASKSARRAY"));
     if (calendarTasks === null) {
@@ -49,6 +50,7 @@ function handleSubmit() {
     window.localStorage.setItem("TASKS", myList.innerHTML);
     window.localStorage.setItem("TASKSCOUNT", a);
     window.localStorage.setItem("EXPERIENCE", b);
+
 }
 
 function clearTasks() {
@@ -60,6 +62,7 @@ function clearTasks() {
 
 function reformatDate(dateStr) {
     dArr = dateStr.split("-");
+    console.log(dArr);
     if (dArr[2] === "20" || dArr[2] === "10" || dArr[2] === "30") {
         if (dArr[1] === "10") {
             return dArr[2] + "-" + dArr[1] + "-" + dArr[0];
@@ -74,5 +77,27 @@ function reformatDate(dateStr) {
         const newdArr2 = dArr[2].replace("0", "");
         const newdArr1 = dArr[1].replace("0", "");
         return newdArr2 + "-" + newdArr1 + "-" + dArr[0];
+    }
+}
+
+function clearATask() {
+
+
+    var allSubjectName = document.querySelectorAll(".subjectName");
+    for (var index = 0; index < allSubjectName.length; index++) {
+        allSubjectName[index].addEventListener("click", function () {
+            this.classList.toggle("active");
+        });
+        allSubjectName[index].querySelector("button").addEventListener("click",
+            function () {
+                console.log(this.closest(".subjectName"));
+                const task = this.closest(".subjectName");
+                let taskString = task.outerHTML;
+                taskString = taskString.replace(" active", "");
+                let array = localStorage.getItem("TASKS");
+                array = array.replace(taskString, "");
+                window.localStorage.setItem("TASKS", array);
+                this.closest(".subjectName").remove();
+            });
     }
 }
