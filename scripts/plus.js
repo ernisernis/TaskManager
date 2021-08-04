@@ -27,7 +27,7 @@ function handleSubmit() {
         b += Math.floor(Math.random() * 11);
     }
 
-    myList.innerHTML += "<li>" + plusTask + " " + plusDate + " " + plusDesc + " " + "</li>";
+    myList.innerHTML += `<li> ${plusTask} ${plusDate} ${plusDesc} <div class="DeleteTask">X</div></li>`;
 
     let calendarTasks = JSON.parse(localStorage.getItem("TASKSARRAY"));
     if (calendarTasks === null) {

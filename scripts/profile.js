@@ -14,32 +14,11 @@ window.addEventListener('load', () => {
 
 })
 
-function profileNameSubmit() {
-
-    var profileName = document.getElementById('profileName').value;
-    localStorage.setItem("PROFILE", profileName);
-}
-
-function profileLastNameSubmit() {
-    var x = document.getElementById('profileLastName').value;
-    localStorage.setItem("PROFILE-LAST-NAME", x);
-}
-
-function profileEmailSubmit() {
-    var x = document.getElementById('profileEmail').value;
-    localStorage.setItem("PROFILE-EMAIL", x);
-}
-
-function profileCountrySubmit() {
-    var x = document.getElementById('profileCountry').value;
-    localStorage.setItem("PROFILE-COUNTRY", x);
-}
-
 function submitAll() {
-    let firstName = document.getElementById("profileName").value;
-    let lastName = document.getElementById("profileLastName").value;
-    let profileEmail = document.getElementById("profileEmail").value;
-    let profileCountry = document.getElementById("profileCountry").value;
+    const firstName = document.getElementById("profileName").value;
+    const lastName = document.getElementById("profileLastName").value;
+    const profileEmail = document.getElementById("profileEmail").value;
+    const profileCountry = document.getElementById("profileCountry").value;
 
     localStorage.setItem("PROFILE", firstName);
     localStorage.setItem("PROFILE-LAST-NAME", lastName);
