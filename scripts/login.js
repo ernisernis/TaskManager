@@ -39,7 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
         let password1 = document.getElementById("idPassword").value;
         const usernameDb = localStorage.getItem("USERNAME");
         const passwordDb = localStorage.getItem("PASSWORD");
-        if (username1 === usernameDb && password1 === passwordDb) {
+        const emailDb = localStorage.getItem("EMAIL");
+        if (username1 === usernameDb || username1 === emailDb && password1 === passwordDb) {
             alert("Login successfully");
             window.location.replace("pages/main.html");
             return false;
