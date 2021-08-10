@@ -101,7 +101,18 @@ function clearATask() {
 }
 
 function removeATaskFromCalendar(closest) {
-    //closest = closest.outerHTML;
-    //matches = closest.matches(/\d+/g);
-    return closest;
+    closest = closest.outerHTML;
+    const matches = closest.match(/\d+/g);
+    let matchesFormatted = `${matches[0]}-${matches[1]}-${matches[2]}`;
+    matchesFormatted = reformatDate(matchesFormatted);
+    const calendarArray = JSON.parse(localStorage.getItem("TASKSARRAY"));
+    console.log(calendarArray[0]);
+    console.log(matchesFormatted);
+    for (let i = 0; i < calendarArray.length; i++) {
+        if (calendarArray[i] === matchesFormatted) {
+            calendarArray[i] = "";
+        }
+    }
+    localStorage.setItem("TASKSARRAY", JSON.stringify(calendarArray));
+    return matchesFormatted;
 }
