@@ -1,9 +1,6 @@
 const calendarElements = document.querySelectorAll('[data-calendar]');
 
 const storedDates = JSON.parse(localStorage.getItem("TASKSARRAY"));
-const arrayCount = localStorage.getItem("TASKSCOUNT")
-
-
 
 const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June', 'July',
@@ -126,7 +123,7 @@ function createCalendar(calendarE1) {
             if (column.dataset.date === todayFormatted) {
                 column.classList.add('today');
             }
-            if (arrayCount !== null) {
+            if (storedDates !== null) {
                 for (let i = 0; i < storedDates.length; i++) {
                     if (column.dataset.date === storedDates[i]) {
                         column.classList.add('today2');
@@ -154,4 +151,8 @@ function getNextMonth(e) {
     e.preventDefault();
     selected = new Date(selected.getFullYear(), selected.getMonth() + 1, 1);
     createCalendar(this);
+}
+
+function getLongestTask() {
+
 }

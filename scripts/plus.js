@@ -1,28 +1,26 @@
-
-
 function handleSubmit() {
 
-    var plusTask = document.getElementById('plusTask').value;
-    var plusDate = document.getElementById('plusDate').value;
-    var plusDesc = document.getElementById('plusDesc').value;
+    let plusTask = document.getElementById("plusTask").value;
+    let plusDate = document.getElementById("plusDate").value;
+    let plusDesc = document.getElementById("plusDesc").value;
 
-    var myList = localStorage.getItem('TASKS');
-    var myTaskCount = localStorage.getItem('TASKSCOUNT');
-    var myExperience = localStorage.getItem("EXPERIENCE");
+    let myList = localStorage.getItem("TASKS");
+    let myTaskCount = localStorage.getItem("TASKSCOUNT");
+    let myExperience = localStorage.getItem("EXPERIENCE");
 
-    document.getElementById('myList').innerHTML = myList;
-    document.getElementById('myTaskCount').innerHTML = myTaskCount;
-    document.getElementById('myExperience').innerHTML = myExperience;
+    document.getElementById("myList").innerHTML = myList;
+    document.getElementById("myTaskCount").innerHTML = myTaskCount;
+    document.getElementById("myExperience").innerHTML = myExperience;
 
-    var myList = document.getElementById('myList');
-    var myTaskCount = document.getElementById('myTaskCount');
-    var myExperience = document.getElementById("myExperience");
+    myList = document.getElementById('myList');
+    myTaskCount = document.getElementById('myTaskCount');
+    myExperience = document.getElementById("myExperience");
 
     let b = parseInt(myExperience.innerHTML);
     let a = parseInt(myTaskCount.innerHTML);
     if (isNaN(a) === true) {
         b = 1;
-        a = 1;
+        a = 1 + Math.floor(Math.random() * 11);
     } else {
         a += 1;
         b += Math.floor(Math.random() * 11);
@@ -35,7 +33,6 @@ function handleSubmit() {
         calendarTasks = [];
         calendarTasks[0] = reformatDate(plusDate);
         localStorage.setItem("TASKSARRAY", JSON.stringify(calendarTasks));
-        alert(calendarTasks);
     } else {
         let count = localStorage.getItem("COUNT");
         if (count === null) {
@@ -54,9 +51,9 @@ function handleSubmit() {
 }
 
 function clearTasks() {
-    window.localStorage.removeItem('TASKS');
+    window.localStorage.removeItem("TASKS");
     window.localStorage.removeItem("TASKSARRAY");
-    window.localStorage.removeItem("TASKSCOUNT");
+    window.localStorage.removeItem("COUNT");
     location.reload();
 }
 
@@ -92,6 +89,7 @@ function clearATask() {
             function () {
                 console.log(this.closest(".subjectName"));
                 const task = this.closest(".subjectName");
+                console.log(removeATaskFromCalendar(task));
                 let taskString = task.outerHTML;
                 taskString = taskString.replace(" active", "");
                 let array = localStorage.getItem("TASKS");
@@ -100,4 +98,10 @@ function clearATask() {
                 this.closest(".subjectName").remove();
             });
     }
+}
+
+function removeATaskFromCalendar(closest) {
+    //closest = closest.outerHTML;
+    //matches = closest.matches(/\d+/g);
+    return closest;
 }
